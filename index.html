@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax Assistant by HEREANDNOW AI RESEARCH INSTITUTE</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif; /* A common, clean sans-serif font */
+    }
+    /* Custom scrollbar for a more modern look */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgb(var(--bg-tertiary, #1e293b)); /* slate-800 or light equivalent */
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgb(var(--border-secondary, #475569)); /* slate-600 or light equivalent */
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgb(var(--text-secondary, #64748b)); /* slate-500 or light equivalent */
+    }
+
+    /* Basic fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* For more complex list animations if needed via JS */
+    .list-item-animate {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+    }
+    .list-item-animate.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Theme Variables */
+    :root {
+      --bg-primary: 248 250 252;      /* slate-50 */
+      --bg-secondary: 255 255 255;   /* white */
+      --bg-tertiary: 226 232 240;     /* slate-200 */
+      --bg-interactive: 241 245 249; /* slate-100 */
+      --bg-interactive-hover: 226 232 240; /* slate-200 */
+      --bg-code: 241 245 249; /* slate-100 for light theme code blocks */
+
+
+      --text-primary: 30 41 59;        /* slate-800 */
+      --text-secondary: 71 85 105;     /* slate-500 */
+      --text-accent: 13 148 136;       /* teal-600 */
+      --text-accent-hover: 20 184 166;  /* teal-500 */
+      --text-on-accent: 255 255 255;   /* white */
+      --text-highlight: 202 138 4;    /* yellow-500 */
+      --text-error: 220 38 38;        /* red-600 */
+
+      --border-primary: 226 232 240;    /* slate-200 */
+      --border-secondary: 203 213 225;  /* slate-300 */
+      --border-focus: 20 184 166;     /* teal-500 */
+
+      --gradient-from: 224 242 254;   /* sky-100 */
+      --gradient-via: 203 213 225;    /* slate-300 */
+      --gradient-to: 148 202 240;     /* sky-300 */
+      
+      --shadow-color: 0 0 0; /* Black for shadow, opacity controlled by Tailwind */
+      --shadow-opacity-start: 0.1;
+      --shadow-opacity-end: 0.05;
+
+      --code-bg: 241 245 249; /* slate-100 */
+      --code-text: 29 78 216; /* blue-700 */
+
+    }
+
+    html.dark {
+      --bg-primary: 15 23 42;         /* slate-900 */
+      --bg-secondary: 30 41 59;      /* slate-800 */
+      --bg-tertiary: 51 65 85;       /* slate-700 */
+      --bg-interactive: 51 65 85;    /* slate-700 */
+      --bg-interactive-hover: 71 85 105; /* slate-600 */
+      --bg-code: 30 41 59; /* slate-800 for dark theme code blocks */
+
+      --text-primary: 241 245 249;    /* slate-100 */
+      --text-secondary: 203 213 225;   /* slate-300 */
+      --text-accent: 45 212 191;      /* teal-400 */
+      --text-accent-hover: 94 234 212; /* teal-300 */
+      --text-on-accent: 15 23 42;     /* slate-900 */
+      --text-highlight: 250 204 21;   /* yellow-400 */
+      --text-error: 248 113 113;      /* red-400 */
+      
+      --border-primary: 51 65 85;      /* slate-700 */
+      --border-secondary: 71 85 105;    /* slate-600 */
+      --border-focus: 45 212 191;      /* teal-400 */
+
+      --gradient-from: 15 23 42;      /* slate-900 */
+      --gradient-via: 30 41 59;       /* slate-800 */
+      --gradient-to: 6 78 59;         /* teal-900 */
+
+      --shadow-color: 0 0 0;
+      --shadow-opacity-start: 0.2;
+      --shadow-opacity-end: 0.1;
+
+      --code-bg: 15 23 42; /* slate-900 */
+      --code-text: 125 211 252; /* sky-300 */
+    }
+
+    .prose code::before, .prose code::after {
+        content: "" !important; /* Remove backticks from prose code blocks */
+    }
+
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.4.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class=""> {/* Base body class, specific theme colors handled by App.tsx and CSS vars */}
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
